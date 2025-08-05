@@ -1,0 +1,23 @@
+{
+  "name": "image-cropper-utility",
+  "version": "1.0.0",
+  "description": "An advanced image cropper that allows you to upload multiple files (including HEIC), select an aspect ratio, crop each image individually, and export them as JPGs with metadata preserved.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "image-cropper",
+    "heic",
+    "exif",
+    "typescript",
+    "tailwind"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}

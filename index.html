@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cropper Utility</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Babel for JSX/TSX compilation in the browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- Third-party libraries -->
+  <!-- HEIC/HEIF converter -->
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+  <!-- EXIF metadata handler -->
+  <script src="https://cdn.jsdelivr.net/npm/piexifjs/piexif.min.js"></script>
+  <!-- JSZip for creating zip files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Required CSS for react-image-crop -->
+  <link rel="stylesheet" href="https://unpkg.com/react-image-crop/dist/ReactCrop.css" />
+
+  <style>
+    /* Custom styles for react-image-crop to fit the dark theme */
+    .ReactCrop__rule-of-thirds-vt::before,
+    .ReactCrop__rule-of-thirds-vt::after,
+    .ReactCrop__rule-of-thirds-hz::before,
+    .ReactCrop__rule-of-thirds-hz::after {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .ReactCrop__drag-handle {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    /* Set a default body background to avoid flash of white */
+    body {
+        background-color: #111827; /* Corresponds to Tailwind's bg-gray-900 */
+    }
+    /* Animation for state transitions */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react-image-crop": "https://esm.sh/react-image-crop@^11.0.10"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- 
+    Your React application script.
+    - type="text/babel": Tells Babel to transpile this.
+    - data-presets="react,typescript": Enables JSX and TypeScript syntax.
+    - data-type="module": Enables ES module imports/exports within your .tsx files.
+    - src="./index.tsx": Uses a relative path to work on any server/hosting.
+  -->
+  <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
+
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
