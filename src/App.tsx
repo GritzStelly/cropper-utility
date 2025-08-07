@@ -63,7 +63,8 @@ const App: React.FC = () => {
   };
 
   const handleCropComplete = (crop: StoredCrop) => {
-    const imageId = images[currentIndex].id;
+    const imageId = images[currentIndex]?.id;
+    if (!imageId) return;
     const newCrops = { ...crops, [imageId]: crop };
     setCrops(newCrops);
 
@@ -140,8 +141,9 @@ const App: React.FC = () => {
             <>
               <div className="w-full text-center mb-4">
                   <p className="text-gray-400">Cropping image {currentIndex + 1} of {images.length}</p>
-                  <p className="font-bold text-lg text-gray-200">{images[currentIndex].name}</p>
+                  <p className="font-bold text-lg text-gray-200">{images[currentIndex]?.name}</p>
               </div>
+              {images[currentIndex] && (
               <ImageCropper
                 image={images[currentIndex]}
                 aspect={selectedRatio}
@@ -150,6 +152,7 @@ const App: React.FC = () => {
                 isFirstImage={currentIndex === 0}
                 isLastImage={currentIndex === images.length - 1}
               />
+              )}
             </>
           );
         }

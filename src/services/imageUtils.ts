@@ -34,7 +34,7 @@ export const processFile = (file: File): Promise<ProcessedImage> => {
           quality: 0.9,
         });
         // heic2any can return Blob or Blob[], we want the first one
-        processedBlob = Array.isArray(converted) ? converted[0] : converted;
+        processedBlob = Array.isArray(converted) ? converted[0]! : converted;
       }
 
       const src = URL.createObjectURL(processedBlob);

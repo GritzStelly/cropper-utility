@@ -79,7 +79,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({ image, aspect, onCropComple
   return (
     <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
       <div className="w-full flex justify-center items-center mb-6 min-h-[60vh] bg-gray-900/50 rounded-lg p-4">
-        {image.src ? (
+        {image.src && crop ? (
           <ReactCrop
             crop={crop}
             onChange={(_, percentCrop) => setCrop(percentCrop)}
