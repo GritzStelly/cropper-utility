@@ -2,10 +2,13 @@
   "name": "image-cropper-utility",
   "version": "1.0.0",
   "description": "An advanced image cropper that allows you to upload multiple files (including HEIC), select an aspect ratio, crop each image individually, and export them as JPGs with metadata preserved.",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "serve .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "react",
@@ -13,11 +16,34 @@
     "heic",
     "exif",
     "typescript",
-    "tailwind"
+    "tailwind",
+    "vite"
   ],
   "author": "AI Assistant",
   "license": "MIT",
+  "dependencies": {
+    "heic2any": "^0.0.4",
+    "jszip": "^3.10.1",
+    "piexifjs": "^1.0.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-image-crop": "^11.0.7"
+  },
   "devDependencies": {
-    "serve": "^14.2.3"
+    "@types/node": "^22.17.0",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.6"
   }
 }

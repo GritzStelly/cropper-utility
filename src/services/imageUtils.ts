@@ -6,19 +6,6 @@ declare const heic2any: any;
 declare const piexif: any;
 declare const JSZip: any;
 
-function fileToDataUrl(blob: Blob): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onloadend = () => resolve(reader.result as string);
-    reader.onerror = reject;
-    reader.readAsDataURL(blob);
-  });
-}
-
-function arrayBufferToDataUrl(buffer: ArrayBuffer, mimeType: string): string {
-    const blob = new Blob([buffer], { type: mimeType });
-    return URL.createObjectURL(blob);
-}
 
 
 export const processFile = (file: File): Promise<ProcessedImage> => {

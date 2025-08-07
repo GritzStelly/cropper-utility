@@ -19,7 +19,6 @@ const ImageCropper: React.FC<ImageCropperProps> = ({ image, aspect, onCropComple
   const imgRef = useRef<HTMLImageElement>(null);
 
   const onImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
-    imgRef.current = e.currentTarget;
     const { width, height } = e.currentTarget; // Use displayed dimensions
     const newCrop = centerCrop(
       makeAspectCrop(

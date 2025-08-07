@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/constants.ts","./src/main.tsx","./src/types.ts","./src/components/fileuploader.tsx","./src/components/icon.tsx","./src/components/imagecropper.tsx","./src/components/ratioselector.tsx","./src/components/spinner.tsx","./src/services/imageutils.ts"],"version":"5.9.2"}
