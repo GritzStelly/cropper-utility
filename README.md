@@ -1,60 +1,49 @@
-# Image Cropper Utility
+# 📸 Image Cropper Utility
 
-An advanced image cropper that allows you to upload multiple files (including HEIC), select an aspect ratio, crop each image individually, and export them as JPGs with metadata preserved. This project is built with React and TypeScript, running directly in the browser without a build step.
+A modern, fast image cropper built with React 19 that lets you upload multiple images (including HEIC), crop them with different aspect ratios, and export them as optimized JPGs with preserved metadata.
 
 ## Features
 
-- **Multi-File Upload**: Upload multiple images at once via file selection or drag & drop.
-- **HEIC/HEIF Support**: Automatically converts HEIC/HEIF files to JPG.
-- **Aspect Ratio Presets**: Choose from common ratios like 1:1, 4:5, 16:9, etc.
-- **Interactive Cropping**: An intuitive cropping UI for each image with aspect ratio locking and flipping.
-- **Metadata Preservation**: Preserves EXIF metadata from original JPGs into the cropped output.
-- **Bulk Export**: Downloads all cropped images in a single `.zip` file.
-- **Responsive Design**: Works on both desktop and mobile devices.
+- **Multi-File Upload** - Drag & drop or select multiple images at once
+- **HEIC/HEIF Support** - Automatically converts iPhone photos to JPG
+- **Aspect Ratio Presets** - 1:1, 4:5, 16:9, and more common ratios
+- **Interactive Cropping** - Intuitive cropping interface with live preview
+- **Metadata Preservation** - Keeps EXIF data from your original photos
+- **Bulk Export** - Download all cropped images in a single ZIP file
+- **Responsive Design** - Works perfectly on desktop and mobile
 
-## How to Use
+## 🚀 Quick Start
 
-Since this project doesn't require a build step, you can run it in a few different ways:
+```bash
+# Clone the repository
+git clone https://github.com/jarmentor/cropper-utility.git
+cd cropper-utility
 
-### 1. Deploy to a Static Host
+# Install dependencies
+npm install
 
-You can deploy this repository directly to any static web host, such as GitHub Pages, Netlify, or Vercel.
+# Start development server
+npm run dev
+```
 
-### 2. Run Locally
+Open [http://localhost:5173](http://localhost:5173) and start cropping!
 
-To run this on your local machine, you need a simple web server to serve the files.
+## Development
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your-repo-url>
-    cd <repo-name>
-    ```
-
-2.  **Install dependencies and start the server:**
-    If you have Node.js and `npm` installed, you can use the included `serve` package:
-    ```bash
-    # Install the local dependency
-    npm install
-    
-    # Start the server
-    npm start
-    ```
-    Then, open `http://localhost:3000` in your browser.
-
-    Alternatively, you can use any other static server. For example, with Python 3:
-    ```bash
-    python -m http.server
-    ```
-    Then, open `http://localhost:8000` in your browser.
-
+```bash
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Check code quality
+```
 
 ## Tech Stack
 
-- **Framework/Libraries**: React (via CDN)
-- **Language**: TypeScript (transpiled in-browser by Babel)
-- **Styling**: Tailwind CSS (via CDN)
-- **Key Dependencies (CDN)**:
-  - `heic2any`: For HEIC/HEIF conversion.
-  - `piexifjs`: For EXIF metadata handling.
-  - `jszip`: For creating `.zip` archives.
-  - `react-image-crop`: For the cropping UI.
+- **React 19.1** - Latest React with modern features
+- **TypeScript 5.9** - Type-safe development
+- **Vite 7** - Lightning-fast build tool
+- **Tailwind CSS** - Utility-first styling
+- **Bundled Dependencies** - All libraries included, no CDN dependencies
+
+## License
+
+MIT License - feel free to use this project however you'd like!
