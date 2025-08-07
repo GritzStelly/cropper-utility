@@ -12,7 +12,7 @@ export interface ProcessedImage {
   originalFile: File;
   name: string;
   src: string;
-  exifData: string | null;
+  exifData: any | null;
   width: number;
   height: number;
 }

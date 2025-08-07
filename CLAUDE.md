@@ -51,11 +51,11 @@ The application follows a state machine pattern with 5 main states:
 - **Vite 6** - Fast build tool and development server
 - **Tailwind CSS 3.4** - Utility-first CSS framework
 - **ESLint** - Code linting with TypeScript support
-- **Dependencies**:
-  - `heic2any` - HEIC/HEIF to JPEG conversion
-  - `piexifjs` - EXIF metadata handling
-  - `jszip` - ZIP file creation
-  - `react-image-crop` - Interactive cropping UI
+- **Bundled Dependencies**:
+  - `heic2any` - HEIC/HEIF to JPEG conversion (bundled)
+  - `piexifjs` - EXIF metadata handling (bundled)
+  - `jszip` - ZIP file creation (bundled)
+  - `react-image-crop` - Interactive cropping UI (bundled)
 
 ### Image Processing Pipeline
 1. File validation (size limit: 25MB)
@@ -79,4 +79,6 @@ Comprehensive error handling throughout the pipeline with user-friendly error me
 - Modern Vite-based build system with hot module replacement
 - TypeScript strict mode enabled with comprehensive linting
 - Uses ES modules and modern JavaScript features
+- All dependencies are bundled (no CDN dependencies)
 - Build artifacts are generated in `dist/` directory
+- Larger bundle size (~448KB gzipped) due to image processing libraries

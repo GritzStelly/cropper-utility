@@ -1,10 +1,9 @@
 
 import { ProcessedImage, StoredCrop } from '../types';
 import { MAX_FILE_SIZE } from '../constants';
-
-declare const heic2any: any;
-declare const piexif: any;
-declare const JSZip: any;
+import heic2any from 'heic2any';
+import piexif from 'piexifjs';
+import JSZip from 'jszip';
 
 
 
@@ -16,7 +15,7 @@ export const processFile = (file: File): Promise<ProcessedImage> => {
 
     try {
       const arrayBuffer = await file.arrayBuffer();
-      let exifData: string | null = null;
+      let exifData: any | null = null;
       if (file.type === 'image/jpeg' || file.type === 'image/jpg') {
           try {
               exifData = piexif.load(new TextDecoder("latin1").decode(new Uint8Array(arrayBuffer)));
@@ -29,11 +28,13 @@ export const processFile = (file: File): Promise<ProcessedImage> => {
       let processedBlob: Blob = file;
       const fileNameLower = file.name.toLowerCase();
       if (fileNameLower.endsWith('.heic') || fileNameLower.endsWith('.heif')) {
-        processedBlob = await heic2any({
+        const converted = await heic2any({
           blob: file,
           toType: "image/jpeg",
           quality: 0.9,
         });
+        // heic2any can return Blob or Blob[], we want the first one
+        processedBlob = Array.isArray(converted) ? converted[0] : converted;
       }
 
       const src = URL.createObjectURL(processedBlob);
