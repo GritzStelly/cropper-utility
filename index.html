@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cropper Utility</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Babel for JSX compilation in the browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- Third-party libraries -->
+  <!-- HEIC/HEIF converter -->
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+  <!-- EXIF metadata handler -->
+  <script src="https://cdn.jsdelivr.net/npm/piexifjs/piexif.min.js"></script>
+  <!-- JSZip for creating zip files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Required CSS for react-image-crop -->
+  <link rel="stylesheet" href="https://unpkg.com/react-image-crop/dist/ReactCrop.css" />
+
+  <style>
+    /* Custom styles for react-image-crop to fit the dark theme */
+    .ReactCrop__rule-of-thirds-vt::before,
+    .ReactCrop__rule-of-thirds-vt::after,
+    .ReactCrop__rule-of-thirds-hz::before,
+    .ReactCrop__rule-of-thirds-hz::after {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .ReactCrop__drag-handle {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      width: 10px;
+      height: 10px;
+    }
+    .ReactCrop__crop-selection {
+      box-shadow: none;
+      border: 2px solid #6366f1; /* indigo-500 */
+    }
+  </style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-image-crop": "https://esm.sh/react-image-crop@11.0.5"
+  }
+}
+</script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+  <div id="root"></div>
+  <script type="text/babel" data-type="module" src="index.tsx"></script>
+<!--script type="module" src="index.tsx"></script-->
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Cropper Utility",
+  "description": "An advanced image cropper that allows you to upload multiple files (including HEIC), select an aspect ratio, crop each image individually, and export them as JPGs with metadata preserved.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
